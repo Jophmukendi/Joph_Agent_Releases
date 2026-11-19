@@ -513,6 +513,92 @@ Before reinstalling or modifying the application, preserve the existing data dir
 
 ---
 
+
+## Uninstallation
+
+Joph Agent can be manually removed from Linux using the following commands.
+
+### 1. Stop and Disable Joph Agent
+
+Stop the running service and disable automatic startup:
+
+```bash
+sudo systemctl disable --now joph-agent
+```
+
+### 2. Remove the systemd Service
+
+Delete the Joph Agent service configuration:
+
+```bash
+sudo rm -f /etc/systemd/system/joph-agent.service
+```
+
+Reload systemd to apply the changes:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl reset-failed joph-agent
+```
+
+### 3. Remove the Application
+
+Delete the Joph Agent installation directory:
+
+```bash
+sudo rm -rf /opt/joph-agent
+```
+
+Remove the command-line wrapper:
+
+```bash
+sudo rm -f /usr/local/bin/joph-agent
+```
+
+### 4. Delete All Application Data (Optional)
+
+**Warning:** The following command permanently deletes all locally stored Joph Agent data, including configuration, enrollment credentials, the SQLite database, and pending monitoring reports.
+
+```bash
+sudo rm -rf /var/lib/joph-agent
+```
+
+If you want to preserve the data for a future installation, skip this step.
+
+### 5. Remove the Linux Service Account (Optional)
+
+If Joph Agent is no longer needed and no other process uses its dedicated service account, remove the account:
+
+```bash
+sudo userdel joph-agent
+```
+
+### 6. Verify Uninstallation
+
+Check whether the systemd service still exists:
+
+```bash
+systemctl status joph-agent
+```
+
+Expected result:
+
+```text
+Unit joph-agent.service could not be found.
+```
+
+Check whether the application command is still available:
+
+```bash
+command -v joph-agent
+```
+
+If the command returns no path, the Joph Agent command wrapper has been removed.
+
+**Note:** Removing Joph Agent from Linux does not automatically delete its device registration or historical monitoring records from the JophMonitor server.
+
+---
+
 ## 10. Troubleshooting
 
 ### 10.1 Agent Service Is Inactive
