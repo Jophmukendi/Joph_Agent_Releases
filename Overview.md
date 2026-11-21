@@ -8,4 +8,4 @@ Joph Agent provides three primary monitoring features:
 2. **Service Monitoring:** Monitors the availability and operational status of configured Linux services.
 3. **Docker Container Monitoring:** Monitors Docker container availability, operational status, and performance metrics, including CPU and memory utilization.
 
-These monitoring features provide centralized visibility into Linux systems, services, and Docker containers, supporting proactive system administration and infrastructure management.
+
