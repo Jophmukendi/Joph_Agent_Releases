@@ -1,0 +1,11 @@
+## Overview
+
+**Joph Agent** is a lightweight Linux monitoring application designed to collect system information, monitor service availability, and track Docker container availability and performance. The application transmits monitoring reports to the centralized **JophMonitor** server for infrastructure monitoring and management.
+
+Joph Agent provides three primary monitoring features:
+
+1. **System Monitoring:** Collects system information and performance metrics, including CPU utilization, memory usage, disk utilization, and system uptime.
+2. **Service Monitoring:** Monitors the availability and operational status of configured Linux services.
+3. **Docker Container Monitoring:** Monitors Docker container availability, operational status, and performance metrics, including CPU and memory utilization.
+
+These monitoring features provide centralized visibility into Linux systems, services, and Docker containers, supporting proactive system administration and infrastructure management.
