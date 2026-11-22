@@ -14,6 +14,12 @@ The agent operates as a background service managed by systemd. It communicates w
 
 Joph Agent is designed for centralized infrastructure monitoring across multiple Linux servers.
 
+
+## Documentation
+
+For detailed information about Joph Agent, including installation, architecture, monitoring features, and configuration, visit the [Joph Agent Wiki](../../wiki).
+
+
 ### Key Features
 
 - Automated installation on supported Linux distributions.
